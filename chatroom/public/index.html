@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>chat app</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="app">
-        <div class="screen join">
+        <div class="screen join-screen active ">
             <div class="form">
-                <h2>Join chat room</h2>
+                <h2>Chat app</h2>
                 <div class="form-input">
                     <label for="">UserName</label>
-                    <input type="text" id="user-name">
+                    <input type="text" id="username">
                     <div class="form-input">
                         <button id="join-user">Join</button>
                     </div>
@@ -21,26 +21,17 @@
             </div>
         </div>
 
-        <div class="screen chat-screen active">
-            <header>
-                <div class="logo">chat room</div>
-                <button id="exit-chat">exit</button>
-            </header>
+        <div class="screen chat-screen  ">
+            <div class="header">
+                <div class="logo">Chat room</div>
+                <button id="exit-chat">Exit</button>
+            </div>        
+               
+            
             <div class="messages">
-                <!-- dummy -->
-                <div class="message my-message">
-                    <div class="name">You</div>
-                    <div class="text">HI</div>
-                </div>
-
-                <div class="update"> welcome our new member</div>
-
-                <div class="message other-message">
-                    <div class="name">abc</div>
-                    <div class="text">HI</div>
-                </div>
+                
             </div>
-<!-- chat box -->
+                            <!-- chat box -->
             <div class="typebox"> 
                 <input type="text" id="message-input">
                 <button id="send-message">send</button>
@@ -52,7 +43,7 @@
 
 
 
-    <script src="socket.io.js"></script>
-    <script src="index.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="code.js"></script>
 </body>
 </html>

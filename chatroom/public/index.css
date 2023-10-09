@@ -6,7 +6,7 @@
 
 body
 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: cambria ;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -17,13 +17,15 @@ body
     width: 100%;
     height: 100%;
     max-width: 600px;
-    background-color: skyblue;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    text-shadow: 2px 2px white;
+    font-weight: bold;
+  
 }
+
 
 .app > .screen{
     display: none;
+   
 }
 .app > .screen.active{
     display: block;
@@ -38,32 +40,55 @@ body
     transform: translate(-50%, -50%);
     width: 80%;
     max-width: 400px;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 50px;
+    font-family: cambria;
+    border-top-right-radius: 0px;
+    background: linear-gradient(to right in hsl, black, blue);  
    
 }
 .screen .form-input
 {
     width: 100%;
     margin: 20px 0px;
+    font-family: cambria;
+    
+    
+}
+.screen .form-input label
+{
+    text-shadow: 1px 1px white;
+    font-family: cambria;
+    font-size: 20px;
+    font-weight: bold;
+    
 }
 .screen h2
 {
     margin-bottom: 20px;
+    font-family: cambria;
     font-size: 30px;
     color: grey;
     border-bottom: 4px solid black;
     padding: 5px 0px;
     display: inline-block;
+    text-shadow: 2px 2px white;
+    font-weight: bold;
+    color: black;
 }
 .screen .form-input label
 {
     display: block;
     margin-bottom: 5px;
+    font-family: cambria;
 }
 .screen .form-input input{
     width: 100%;
     padding: 10px;
     border: 1px solid black;
     font-size: 16px;
+    
 }
 .screen .form-input button
 {
@@ -74,7 +99,17 @@ body
     cursor: pointer;
     outline: none;
     border: none;
+    font-family: georgia;
+    font-weight: bold;
+    
+    
 
+}
+.screen .form-input button:hover
+{
+    background-color:black;
+    color: white;
+    font-family: georgia;
 }
 /* chat room -----------------------------------------------*/
 .chat-screen .header
@@ -93,22 +128,29 @@ body
     color: #eee;
     font-weight: 600;
 }
+
 .chat-screen .header button
 {
     padding: 5px 10px;
-    border: 1px solid black;
+    border: 1px solid grey;
     background-color: transparent;
     color: #eee;
     font-size: 15px;
     cursor: pointer;
     outline: none;
 }
+.chat-screen .header button:hover 
+{
+    background-color: white;
+    color: black;
+    text-shadow: (0px,0px,20px,5px) rgba(0,0,0,0.05);
+}
 
 .chat-screen .messages
 {
     width: 100%;
     height: calc(100% - 100px);
-    background: lightcoral;
+    background: skyblue;
     overflow: auto;
 }
 .chat-screen .messages .message
@@ -125,11 +167,11 @@ body
 }
 .chat-screen .messages .message.my-message
 {
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 .chat-screen .messages .message.other-message
 {
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 .chat-screen .messages .message .name
 {
@@ -163,8 +205,8 @@ body
 {
     width: 80px;
     height: 100%;
-    background: white;
-    color: black;
+    background:grey;
+    color: white;
     font-size: 16px;
     outline: none;
 }
