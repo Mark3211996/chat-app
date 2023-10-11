@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 
 body
@@ -9,7 +10,10 @@ body
     font-family: cambria ;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+    background-image: url(/img/skul.jpg);
+    background-size: cover;
+    
 }
 .app
 {
@@ -22,16 +26,17 @@ body
   
 }
 
-
 .app > .screen{
-    display: none;
-   
+    display: none;  
 }
 .app > .screen.active{
     display: block;
     width: 100%;
     height: 100%;
+    border:transparent;
+    background-color: transparent;
 }
+
 .screen .form
 {
     position: absolute;
@@ -40,12 +45,14 @@ body
     transform: translate(-50%, -50%);
     width: 80%;
     max-width: 400px;
-    border: 2px solid black;
-    border-radius: 40px;
+    border: transparent;
     padding: 50px;
     font-family: cambria;
-    border-top-right-radius: 0px;
-    background: linear-gradient(to right in hsl, black, blue);  
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background: linear-gradient(to right in hsl,black, transparent, blue ,transparent); 
+    box-shadow: 10px 0px 10px 0px black;
+    
    
 }
 .screen .form-input
@@ -100,9 +107,7 @@ body
     outline: none;
     border: none;
     font-family: georgia;
-    font-weight: bold;
-    
-    
+    font-weight: bold;   
 
 }
 .screen .form-input button:hover
@@ -111,33 +116,44 @@ body
     color: white;
     font-family: georgia;
 }
-/* chat room -----------------------------------------------*/
+/* chat room ============================================*/
+.chat-screen
+{
+    box-shadow: 10px 0px 10px 0px;
+}
+
 .chat-screen .header
 {
+    position: relative;
     background: black;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
+    
+    
 }
 
 .chat-screen .header .logo 
 {
     font-size: 18px;
     color: #eee;
-    font-weight: 600;
+    font-weight: bold;
+    text-shadow: none;
 }
 
 .chat-screen .header button
 {
     padding: 5px 10px;
-    border: 1px solid grey;
+    border: 1px none;
     background-color: transparent;
-    color: #eee;
+    color: white;
     font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
     outline: none;
+    
 }
 .chat-screen .header button:hover 
 {
@@ -145,29 +161,33 @@ body
     color: black;
     text-shadow: (0px,0px,20px,5px) rgba(0,0,0,0.05);
 }
-
+/* inbox =====================================================*/
 .chat-screen .messages
 {
     width: 100%;
     height: calc(100% - 100px);
-    background: skyblue;
-    overflow: auto;
+    background:transparent;   
+    overflow: auto; 
 }
+
 .chat-screen .messages .message
 {
     display: flex;
     padding: 10px;
+    
 }
 .chat-screen .messages .message > div
 {
     max-width: 70px;
-    background-color: white;
-    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.05);
+    background-color: transparent;
+    box-shadow: 10px 0px 10px 0px;
     padding: 5px;
+    text-shadow: none;
 }
 .chat-screen .messages .message.my-message
 {
     justify-content: flex-end;
+   
 }
 .chat-screen .messages .message.other-message
 {
@@ -182,12 +202,14 @@ body
 .chat-screen .messages .message .text
 {
     word-wrap: break-word;
+    color: yellowgreen;
 }
 .chat-screen .messages .update
 {
     text-align: center;
     padding: 10px;
     font-style: italic;
+    text-shadow: none;
 }
 .chat-screen .typebox
 {
@@ -200,6 +222,8 @@ body
     flex:1;
     height: 50px;
     font-size: 18px;
+    font-family: cambria;
+    border-radius: 50px;
 }
 .chat-screen .typebox button
 {
@@ -209,6 +233,7 @@ body
     color: white;
     font-size: 16px;
     outline: none;
+    border-radius: 30px;
 }
 .chat-screen .typebox button:hover
 {
