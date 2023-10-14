@@ -105,14 +105,16 @@ body
     font-size: 16px;
     cursor: pointer;
     outline: none;
-    border: none;
+    border: transparent;
     font-family: georgia;
     font-weight: bold;   
+    
 
 }
 .screen .form-input button:hover
 {
     background-color:black;
+    border:none;
     color: white;
     font-family: georgia;
 }
@@ -250,3 +252,4 @@ body
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
+/* Loginform =====================================================================================*/
