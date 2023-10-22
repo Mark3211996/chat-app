@@ -33,7 +33,7 @@ io.on("connection",function(socket){
 
 // login ============================================================================================
 app.get("/login", (req, res) =>{
-    res.sendFile(__dirname + "\chat app\chatroom\login\login.html");
+    res.sendFile(__dirname + "../chatroom/login/login.html");
 });
 
 app.post("/login", (req, res) =>{
@@ -58,5 +58,30 @@ app.post("/login", (req, res) =>{
     });
 
 });
+
+// register =====================================================================================
+app.get("/register", (req, res) =>{
+    res.sendFile(__dirname + "../chatroom/register/register.html");
+});
+
+
+app.post("/register", (req, res) =>{
+
+    const { user_name, user_email, user_password } = req.body;
+
+    const sql = "INSERT INTO user(user_name, user_email, user_password) VALUES(?, ?, ?)";
+
+    con.query(sql, [user_name, user_email, user_password], (err, result) =>{
+
+        if(!err){
+            return res.status(200).json({message: "Registered successfully"});
+        }
+
+        return res.status(500).json({message: "Server error"});
+
+    });
+
+});
+
 
 server.listen(5000);
