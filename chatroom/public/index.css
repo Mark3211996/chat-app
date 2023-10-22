@@ -100,14 +100,16 @@ body
 .screen .form-input button
 {
     padding: 10px 20px;
-    background-color: gray;
-    color: black;
+    background-color: transparent;
+    color: white;
     font-size: 16px;
     cursor: pointer;
     outline: none;
     border: transparent;
     font-family: georgia;
     font-weight: bold;   
+    box-shadow: 10px 0px 10px 0px;
+    box-shadow: white;
     
 
 }
@@ -115,9 +117,10 @@ body
 {
     background-color:black;
     border:none;
-    color: white;
+    color: yellowgreen;
     font-family: georgia;
-}
+    
+} 
 /* chat room ============================================*/
 .chat-screen
 {
@@ -252,4 +255,3 @@ body
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-/* Loginform =====================================================================================*/

@@ -3,6 +3,16 @@ const path = require("path");
 
 const app = express()
 const server = require("http").createServer(app);
+const mysql = require("mysql2");
+
+const con = mysql.createConnection({
+
+    host: "localhost",
+    user: "root",
+    password: "",
+    database:"chatapp"
+
+});
 
 const io = require("socket.io")(server);
 
@@ -17,6 +27,34 @@ io.on("connection",function(socket){
     });
     socket.on("chat",function(message){
         socket.broadcast.emit("chat",message);
+    });
+
+});
+
+// login ============================================================================================
+app.get("/login", (req, res) =>{
+    res.sendFile(__dirname + "\chat app\chatroom\login\login.html");
+});
+
+app.post("/login", (req, res) =>{
+
+    const { userName, user_password } = req.body;
+
+    const sql = "SELECT user_id, user_name FROM user WHERE userName = ? AND user_password = ?";
+
+    con.query(sql, [userName, user_password], (err, result) =>{
+
+        console.log(result);
+
+        if(!err){
+            if(result.length > 0){
+                return res.status(200).json({message: result, codeNumber: 1});
+            }
+
+            return res.status(200).json({message: "Invalid username or password", codeNumber: 0});
+        }
+
+        return res.status(500).json({message: "Server Error"});
     });
 
 });

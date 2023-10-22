@@ -44,8 +44,6 @@
         renderMessage("other",message);
     });
 
-
-
     function renderMessage(type,message){
         let messageContainer = app.querySelector(".chat-screen .messages");
         if(type == "my"){
@@ -87,9 +85,16 @@
         //to scroll from top message
         messageContainer.scrollTop = messageContainer.scrollHeight - messageContainer.clientHeight;
     }
-
-
-
-
-
+    function auth(){
+        var login = document.getElementById("login-user").value;
+        var pass = document.getElementById("login-pass").value;
+        if (login === "admin" && pass === "admin") {
+            alert("Login successfully!!!");
+            // You can use relative paths to redirect to a local page
+            window.location.href = ("class=screen join-screen");
+        } else {
+            alert("Invalid information");
+            return false;
+        }
+    };
 })();
