@@ -125,6 +125,7 @@ body
 .chat-screen
 {
     box-shadow: 10px 0px 10px 0px;
+    display: none;
 }
 
 .chat-screen .header
@@ -173,6 +174,7 @@ body
     height: calc(100% - 100px);
     background:transparent;   
     overflow: auto; 
+ 
 }
 
 .chat-screen .messages .message

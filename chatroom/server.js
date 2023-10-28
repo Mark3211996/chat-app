@@ -14,9 +14,15 @@ const con = mysql.createConnection({
 
 });
 
+
+con.on("connect", ()=>{
+    console.log("DB Connected");
+})
+
 const io = require("socket.io")(server);
 
 app.use(express.static(path.join(__dirname+"/public")));
+app.use(express.json());
 
 io.on("connection",function(socket){
     socket.on("newuser",function(username){
@@ -33,14 +39,14 @@ io.on("connection",function(socket){
 
 // login ============================================================================================
 app.get("/login", (req, res) =>{
-    res.sendFile(__dirname + "../chatroom/login/login.html");
+    res.sendFile(__dirname + "/public/login/login.html");
 });
 
 app.post("/login", (req, res) =>{
 
     const { userName, user_password } = req.body;
 
-    const sql = "SELECT user_id, user_name FROM user WHERE userName = ? AND user_password = ?";
+    const sql = "SELECT user_id, user_name FROM login WHERE user_name = ? AND user_password = ?";
 
     con.query(sql, [userName, user_password], (err, result) =>{
 
@@ -54,10 +60,13 @@ app.post("/login", (req, res) =>{
             return res.status(200).json({message: "Invalid username or password", codeNumber: 0});
         }
 
+        console.log(err);
+
         return res.status(500).json({message: "Server Error"});
     });
 
 });
+
 
 // register =====================================================================================
 app.get("/register", (req, res) =>{
