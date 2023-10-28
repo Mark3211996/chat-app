@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chat app</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-  <!-- messages =============================== -->
-     <div class="app">  
+    <!-- messages =============================== -->
+    <div class="app">
         <div class="screen join-screen active">
             <div class="form">
                 <h2>My Chat App offline</h2>
@@ -27,24 +29,25 @@
             <div class="header">
                 <div class="logo">Chatroom</div>
                 <button id="exit-chat">Exit</button>
-            </div>                  
-            <div class="messages">               
             </div>
-         <!-- chat box ----------- -->
-            <div class="typebox"> 
+            <div class="messages">
+            </div>
+            <!-- chat box ----------- -->
+            <div class="typebox">
                 <input type="text" id="message-input">
                 <button id="send-message">send</button>
             </div>
-            
-        </div>     
-    
+
+        </div>
+
     </div>
 
-    
+
 
     <script type="text/javascript" src="socket.io/socket.io.js"></script>
     <script type="text/javascript" src="code.js"></script>
-    
-    
+
+
 </body>
+
 </html>
