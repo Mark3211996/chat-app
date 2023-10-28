@@ -70,7 +70,7 @@ app.post("/login", (req, res) =>{
 
 // register =====================================================================================
 app.get("/register", (req, res) =>{
-    res.sendFile(__dirname + "../chatroom/register/register.html");
+    res.sendFile(__dirname + "/public/register/register.html");
 });
 
 
@@ -78,9 +78,9 @@ app.post("/register", (req, res) =>{
 
     const { user_name, user_email, user_password } = req.body;
 
-    const sql = "INSERT INTO user(user_name, user_email, user_password) VALUES(?, ?, ?)";
+    const sql = "INSERT INTO register(user_name, user_password, user_email) VALUES(?, ?, ?)";
 
-    con.query(sql, [user_name, user_email, user_password], (err, result) =>{
+    con.query(sql, [user_name, user_password, user_email], (err, result) =>{
 
         if(!err){
             return res.status(200).json({message: "Registered successfully"});

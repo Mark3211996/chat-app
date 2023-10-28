@@ -18,8 +18,9 @@ function handleRegister(e){
 
     const userObj = {
         user_name: user_name,
-        user_email: user_email,
-        user_password: user_password
+        user_password: user_password,
+        user_email: user_email
+        
     }
     sendData(userObj);
 }
