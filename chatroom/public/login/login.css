@@ -12,4 +12,66 @@ body
     display: flex;
     justify-content: center; 
     background-size: cover;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
+
+
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    border: transparent;
+    padding: 50px;
+    font-family: cambria;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background: #3f3e36;
+    background: linear-gradient(150deg, #3f3e36 42%, #f36262 62%); 
+    box-shadow: 10px 0px 10px 0px black;
+}
+.loginbtn
+{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: transparent;
+    font-family: georgia;
+    font-weight: bold;   
+    box-shadow: 2px 0px 3px 0px;
+    box-shadow: white;
+    
+
+}
+.loginbtn:hover
+{
+    background-color:rgb(238,174,202);
+    border:none;
+    color: radial-gradient(circle, rgba(238,174,202,1) 5%, rgba(40,38,46,1) 81%);
+    font-family: georgia;
+}
+label
+{
+    display: block;
+    margin-bottom: 6px;
+    font-family: "Georgia, serif";
+    color: white;
+    margin-bottom: -1px;
+}
+input {
+    
+   border-radius: 2px transparent;
+ }
+ h1
+ {
+    color: white;
+  
+ }
+  
